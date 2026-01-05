@@ -1,0 +1,15 @@
+{
+  "name": "Abnormal_Config_Change",
+  "patterns": [
+    "(?i)vpn.*(?:malicious|suspicious|unauthorized).*(?:profile|configuration)",
+    "(?i)proxy.*(?:bypass|malicious).*(?:configuration|detected)",
+    "(?i)RemoteManagement.*(?:Suspicious|Malicious).*(?:detected|source)",
+    "(?i)profilePayload.*(?:unsigned|malicious).*(?:detected|installed)"
+  ],
+  "exclude_patterns": [
+    "com\\.apple\\.", "system", "legitimate", "enterprise", "corporate"
+  ],
+  "description": "Detects genuinely suspicious configuration changes",
+  "severity": "Medium",
+  "confidence": "Medium"
+}

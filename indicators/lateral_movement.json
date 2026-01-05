@@ -1,0 +1,19 @@
+{
+  "name": "Lateral_Movement_Patterns", 
+  "patterns": [
+    "(?i)ssh.*connection.*(?:rapid|multiple|unauthorized).*(?:internal|network).*(?:hosts|systems)",
+    "(?i)(?:smb|rdp).*(?:enumeration|brute.*force|unauthorized).*(?:multiple.*targets|network)",
+    "(?i)(?:psexec|wmi).*remote.*execution.*(?:unauthorized|suspicious|malicious)",
+    "(?i)credential.*(?:reuse|pass.*the.*hash).*(?:multiple.*systems|lateral.*movement)",
+    "(?i)admin.*share.*access.*(?:unauthorized|suspicious|enumeration).*(?:detected|attempt)"
+  ],
+  "exclude_patterns": [
+    "com\\.apple\\.", "system.*configuration", "MCSettings", "Truth\\.plist",
+    "normal.*operation", "legitimate.*remote", "authorized.*access",
+    "mobile.*configuration", "system.*settings", "configuration.*profile"
+  ],
+  "description": "Detects lateral movement attempts, excluding normal system configuration",
+  "severity": "High", 
+  "confidence": "Medium",
+  "remediation": "Isolate affected systems, audit network access, reset credentials, implement network segmentation"
+}

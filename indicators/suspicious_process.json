@@ -1,0 +1,21 @@
+{
+  "name": "Suspicious_Process_Launch",
+  "patterns": [
+    "wget.*\\.sh",
+    "wget.*\\.py", 
+    "curl.*\\.sh",
+    "curl.*\\.py",
+    "curl.*\\.exe",
+    "osascript.*download",
+    "osascript.*execute",
+    "osascript.*system",
+    "launchctl load.*\\.plist",
+    "\\.dylib.*inject",
+    "\\.dylib.*hook"
+  ],
+  "exclude_patterns": [
+    "com\\.apple\\.", "/System/", "Software Update", "App Store", "/usr/libexec/"
+  ],
+  "description": "Fast suspicious process detection",
+  "severity": "Medium"
+}

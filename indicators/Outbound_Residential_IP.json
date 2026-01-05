@@ -1,0 +1,13 @@
+{
+  "name": "Outbound_Residential_IP", 
+  "patterns": [
+    "connection.*residential.*IP",
+    "outbound.*\\b(?:comcast|verizon|att|cox|charter)\\b",
+    "suspicious.*residential.*connection"
+  ],
+  "exclude_patterns": [
+    "legitimate", "authorized", "vpn", "proxy", "cdn"
+  ],
+  "description": "Detects suspicious outbound connections with residential context",
+  "severity": "Medium"
+}
